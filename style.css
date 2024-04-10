@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    font-family: 'poppins' , sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url(img/1736.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+section {
+    position: relative;
+    max-width: 400px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(35px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem;
+}
+
+.input-box header{
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 45px;
+    color: #fff;
+}
+
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    margin-top: 30px;
+}
+
+button:hover {
+    background-color: rgb(255, 255, 255, 0.5);
+
+}
+
+.register {
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a {
+    text-decoration: none;
+    color: #fffb1f;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    text-decoration: underline;
+}
+
+
+.input-box{
+    width: 330px;
+    box-sizing: border-box;
+  }
+
+
+.input-field{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 10px 0 10px;
+}
+
+.input{
+    height: 45px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    outline: none;
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 18px
+}
+.input-box .input-field label{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-field input:focus ~ label
+   {
+    top: -10px;
+    font-size: 13px;
+  }
+
+  .input-field input:valid ~ label
+  {
+   top: -10px;
+   font-size: 13px;
+   color: #40e2ff;
+ }
+ 
+ .input-field .input:focus, .input-field .input:valid{
+    border-bottom: 1px solid #743ae1;
+ }
+
+ .input-field svg {
+    position: absolute;
+    top: 50%;
+    right: 1.4rem; /* ให้โลโก้อยู่ทางขวา */
+    transform: translateY(-100%);
+    font-size: 2rem;
+}
+
+.input-field input {
+    
+    padding-right: 2.5rem; /* ปรับขนาด padding ทางขวาเพื่อให้ข้อความไม่ถูกครอบโดยโลโก้ */
+}
+
+/* สไตล์เลือกตัวเลือกในแบบฟอร์ม */
+
+
+/* สไตล์เลือกตัวเลือกเมื่อโฟกัสหรือได้รับการเลือก */
+select:focus,
+select:checked {
+    outline: none; /* ลบเส้นขอบเมื่อโฟกัส */
+    border-color: #6200ff; /* เปลี่ยนสีขอบเมื่อโฟกัส */
+}
+
+select {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer; /* ทำให้เป็นรูปแบบ cursor แบบชี้ชี้ */
+    color: #000000;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+select:focus,
+select:hover {
+
+    outline: none;
+    border: 1px solid #bbbbbb;
+
+}
+
+/* สไตล์ตัวเลือกเมื่อได้รับการเลือก */
+select:checked {
+    background-color: #e9ecef; /* เปลี่ยนสีพื้นหลังเมื่อได้รับการเลือก */
+}
+
+/* สไตล์ตัวเลือกตัวอื่น ๆ */
+select option {
+    padding: 0.5rem;
+    background-color: #fff;
+}
+
+/* สไตล์ตัวเลือกเมื่อโฮเวอร์ */
+select option:hover {
+    background-color: #f8f9fa;
+    cursor: pointer; /* ทำให้เป็นรูปแบบ cursor แบบชี้ชี้ */
+}
+
+.select-btn i{
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+select.active .select-btn i{
+    transform: rotate(-180deg);
+}
+
+h3 {
+    margin-top: 0px;
+    color: #ffff;
+    font-size: 20px;
+    align-items: center;
+    position: center;
+}
+
+.forgot-password a{
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    left: 10px;
+    padding: 0 10px 0 10px;
+}

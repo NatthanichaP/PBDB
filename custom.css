@@ -1,0 +1,612 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins' , sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  
+}
+
+html, body {
+  height: 100%; /* ทำให้ body มีความสูงเต็มหน้าจอ */
+}
+
+.navbar {
+background: linear-gradient(0.25turn, rgb(23, 91, 218), rgb(83, 198, 226));
+display: flex;
+width: 100%;
+height: 8vh;
+margin-right: 20px;
+color: rgb(255, 255, 255);
+align-items: center;
+justify-content: space-between;
+}
+
+/* .content {
+  display: none;
+} */
+
+.navbar-collapse {
+  margin-left: 900px;
+  justify-content: space-between;
+ 
+}
+
+.navbar-nav .nav-item {
+  margin-right: 10px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  margin-left: 5px; /* Adjust as needed */
+}
+
+
+#sidebar-wrapper {
+position: fixed;
+z-index: 2;
+left: 0;
+width: 300px;
+height: 100%;
+transition: all 0.4s ease 0s;
+transform: translateX(-300px);
+background: #367cd8;
+border-right: 1px solid rgba(19, 58, 167, 0.1);
+}
+
+
+.sidebar-nav {
+position: absolute;
+top: 0;
+width: 300px;
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+.sidebar-nav li.sidebar-nav-item a {
+display: block;
+text-decoration: none;
+color: #fff;
+padding: 30px;
+
+}
+
+.sidebar-nav li.sidebar-nav-item h5 {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  margin-top: 10px;
+  margin-left: 40px;
+  font-size: 18px;
+}
+
+.sidebar-nav svg {
+margin-right: 10px;
+}
+
+.sidebar-nav li a:hover {
+text-decoration: none;
+color: #fff;
+background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+font-size: 1.2rem;
+background: rgba(52, 58, 64, 0.1);
+height: 100px;
+line-height: 50px;
+padding-top: 15px;
+padding-bottom: 15px;
+padding-left: 80px;
+padding-right: 30px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+color: #fff;
+text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+color: #fff;
+background: none;
+}
+
+#sidebar-wrapper.active {
+left: 300px;
+width: 300px;
+transition: all 0.4s ease 0s;
+}
+
+.menu-toggle {
+position: fixed;
+left: 15px;
+top: 15px;
+width: 50px;
+height: 50px;
+text-align: center;
+color: #fff;
+background: rgba(52, 58, 64, 0.5);
+line-height: 50px;
+z-index: 999;
+}
+.menu-toggle:focus, .menu-toggle:hover {
+color: #fff;
+}
+.menu-toggle:hover {
+background: #1459b4;
+}
+
+/* เรียง dropdown ให้แสดงด้านขวา */
+.dropdown-menu {
+left: auto;
+right: 0;
+}
+
+/* ปรับแต่ง dropdown item */
+.dropdown-item {
+color: #333;
+display: block;
+width: 100%;
+padding: 0.5rem 1rem;
+clear: both;
+font-weight: 400;
+text-align: inherit;
+white-space: nowrap;
+background-color: transparent;
+border: 0;
+}
+
+/* ปรับแต่งสีพื้นหลังของ dropdown item เมื่อ hover */
+.dropdown-item:hover {
+background-color: #f8f9fa;
+}
+
+.parking-container {
+  margin: 80px 0px;
+  /* ให้ .parking-container มีความสูงเต็มหน้าจอ */
+ 
+}
+.parking {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-row-gap: 1px;
+  /* border: 2px solid rgb(121, 118, 118); */
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 20px;
+}
+
+.park {
+
+  background-color: rgb(255, 255, 255);
+  width: 100px;
+  height: 100vh;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.park a {
+  align-items: center;
+  color: rgb(0, 204, 0); /* สีข้อความ */
+  
+  box-shadow: inset;
+}
+
+
+.parking-lot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0px;
+  
+}
+
+.parking-slot {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  margin: 20px 20px;
+  align-items: center;
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.parking-slot a {
+  text-decoration: none;
+  color: #333;
+}
+
+.parking-slot.available svg {
+  fill: rgb(20, 245, 20);
+}
+
+.parking-slot.occupied svg {
+  fill: #f00;
+  
+}
+
+/* สีสำหรับรถที่ว่าง */
+.available .bi-car-front-fill {
+  fill: green;
+}
+
+/* สีสำหรับรถที่ถูกจอง */
+.occupied .bi-car-front-fill {
+  fill: red;
+}
+
+/* section card visa user*/
+.section-card {
+position: relative;
+min-height: 100vh;
+width: 100%;
+background: #021024;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #fff;
+perspective: 2000px;
+display: none;
+padding-top: 300px;
+
+}
+
+.section-card::before {
+  content: "";
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  transform: translate(300px, -150px);
+  background: linear-gradient(240deg, #001e4b, #c1e8ff);
+}
+
+.section-card::after {
+  content: "";
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  transform: translate(850px, -100px);
+  background: linear-gradient(90deg, #001e4b, #c1e8ff);
+}
+
+.container {
+  position: relative;
+  width: 350px;
+  height: 220px;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+/* .container:hover {
+  transform: rotateY(180deg);
+} */
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.section-card .card-visa .card.front-face header .logo h5,
+.section-card .card-visa .card-details .name-number h6,
+.section-card .card-visa .card-details .name-number .number,
+.section-card .card-visa .card-details .name-number .name,
+.section-card .card-visa .card-details .valid-date h6,
+.section-card .card-visa .card-details .valid-date h5,
+.section-card .card-visa .card.back-face h6,
+.section-card .card-visa .card.back-face h5 {
+color: #ffffff; /* เปลี่ยนสีฟอนต์เป็นสีที่ต้องการ */
+}
+
+.card-visa {
+position: center;
+height: 130px;
+width: 100px;
+z-index: 100;
+transition: 0.6s;
+transform-style: preserve-3d;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.card-visa:hover {
+transform: rotateY(180deg);
+}
+
+.card-visa .card {
+position: absolute;
+height: 200%;
+width: 50%;
+padding: 25px;
+border-radius: 20px;
+backdrop-filter: blur(25px);
+background: rgba(255, 254, 254, 0.1);
+box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+border: 1px solid rgba(255, 255, 255, 0.1);
+backface-visibility: hidden;
+}
+
+.front-face header,
+.front-face .logo {
+display: flex;
+align-items: center;
+}
+
+.front-face header {
+justify-content: space-between;
+}
+
+.front-face .logo img {
+width: 48px;
+margin-right: 10px;
+}
+
+.logo h5 {
+font-size: 18px;
+font-weight: 400;
+margin-top: 20px;
+text-align: center;
+}
+
+.front-face .chip {
+width: 50px;
+}
+
+.front-face .card-details {
+display: flex;
+margin-top: 30px;
+align-items: flex-end;
+justify-content: space-between;
+}
+
+.name-number h6 {
+font-size: 18px;
+font-weight: 400;
+}
+
+h5.number {
+font-size: 12px;
+letter-spacing: 1px;
+}
+
+h5.name {
+font-size: 18px;
+margin-top: 35px;
+text-align: unset;
+}
+
+.card.back-face {
+border: none;
+padding: 15px 25px 25px 25px;
+transform: rotateY(180deg);
+}
+.card.back-face h6 {
+font-size: 8px;
+}
+.card.back-face .magnetic-strip {
+position: absolute;
+top: 40px;
+left: 0;
+height: 45px;
+width: 100%;
+background: #ffffff;
+}
+
+.card.back-face .magnetic-strip svg {
+  align-items: center; /* จัดให้อยู่ตรงกลางตามแนวตั้ง */
+  justify-content: center; /* จัดให้อยู่ตรงกลางตามแนวนอน */
+}
+.card.back-face .signature {
+display: flex;
+justify-content: flex-end;
+align-items: flex-end;
+margin-top: 3px;
+height: 40px;
+width: 95%;
+border-radius: 6px;
+/* background: repeating-linear-gradient(
+  #fff,
+  #fff 3px,
+  #efefef 0px,
+  #efefef 9px
+); */
+}
+.signature i {
+color: #000000;
+font-size: 18px;
+padding: 4px 2px;
+border-radius: 4px;
+background-color: #fff;
+margin-right: -30px;
+z-index: -1;
+}
+.card.back-face h5 {
+font-size: 8px;
+margin-top: 15px;
+}
+
+.back-face {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* จัดให้อยู่ตรงกลางตามแนวตั้ง */
+  justify-content: center; /* จัดให้อยู่ตรงกลางตามแนวนอน */
+  height: 100%; /* ความสูงเท่ากับพื้นที่ที่ต้องการจัดวาง */
+}
+
+/* .slide-card {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(25,12,41);
+}
+
+.slider {
+  position: relative;
+  width: 30%;
+  overflow: hidden;
+}
+.images {
+  display: flex;
+  width: 100%;
+}
+.images img {
+  height: 400px;
+  width: 100%;
+  transition: all 0.15s ease;
+}
+.images input {
+  display: none;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+.dots label {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: solid #fff 3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin: 5px;
+}
+.dots label:hover {background: #1b32ff;}
+
+#img1:checked ~ .m1 {
+  margin-left: 0;
+}
+#img2:checked ~ .m2 {
+  margin-left: -100%;
+} */
+
+.payment-details {
+
+  display: none;
+}
+
+
+.form-group1 {
+  background-color: #ffeea4;
+  width: 375px;
+  padding: 25px;
+  margin: 25px auto 0;
+  box-shadow: 0px 0px 20px rgba(8, 135, 209, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  
+}
+
+.form-group2 {
+  background-color: #ffeea4;
+  width: 375px;
+  padding: 25px;
+  margin: 25px auto 0;
+  box-shadow: 0px 0px 20px rgba(8, 135, 209, 0.3);
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* .form-group2 .from {
+  text-align: center;
+  justify-content: center;
+}
+
+.form-group1 .from {
+  text-align: center;
+  justify-content: center;
+} */
+.contact-section {
+  display: flex;
+  justify-content: center; /* จัดให้อยู่ตรงกลาง */
+  gap: 20px; /* ระยะห่างระหว่าง form-group */
+  padding-top: 2rem;
+  display: none;
+}
+
+.form-admin {
+  align-items: center;
+  justify-content: center;
+}
+
+
+.contact-form {
+  margin-top: 50px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-group textarea {
+  height: 150px;
+}
+
+.form-group button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #248eff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-group button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* เพิ่มสไตล์ CSS สำหรับเนื้อหาบนหน้าเว็บ */
+#content-wrapper {
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+ 
+
+  .parking-lot {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 20px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .container {
+      display: flex;
+    }
+
+    & ul {
+      display: flex;
+    }
+  }
+}
